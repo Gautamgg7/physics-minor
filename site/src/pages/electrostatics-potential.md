@@ -4,7 +4,7 @@ title: 1C · Potential & Dipole — V(r,θ), E from V + Solved PYQs
 description: Dipole moment, potential derivation, E = −grad V, three 2019 gradient problems, conservative proof. Full steps.
 ---
 
-<p>This page is about electric potential and the electric dipole. We start with the dipole moment vector, then derive the dipole potential $V(r,\theta)$ and its field. After that we solve three short 2019 gradient problems (Q20, Q21, Q22) and prove that the electrostatic field is conservative.</p>
+<p>This page is about electric potential and the electric dipole. We start with the dipole moment vector, then derive the dipole potential $V(r,\theta)$ and its field. After that we prove that the electrostatic field is conservative.</p>
 
 <h2>1. Electric dipole and dipole moment</h2>
 <p>A dipole is a pair of equal and opposite charges $+q$ and $-q$ separated by a small distance $2l$. Daily example: an HCl molecule. The dipole moment vector is defined as</p>
@@ -14,6 +14,26 @@ description: Dipole moment, potential derivation, E = −grad V, three 2019 grad
 <div class="fig"><img src="/images/dipole.svg" alt="Dipole with charges +q and -q, moment arrow p from minus to plus, field point P at (r, theta)" /><div class="cap">Fig 1.1: dipole geometry. The arrow $\vec{p} = q\cdot 2\vec{l}$ points from $-q$ toward $+q$. Field point $P(r,\theta)$ uses Eq. (2) below. Verified: the arrow direction matches Eq. (1).</div></div>
 
 <h2>2. Potential and field of a dipole</h2>
+
+<h3>Potential as a line integral of field</h3>
+<p>Potential difference is the work per unit charge against the field, so it is a line integral:</p>
+
+<div class="formula"><b>Formula 1b.</b> $\boxed{V(B) - V(A) = -\int_A^B \vec{E}\cdot d\vec{l}}$ — minus sign because we push <i>against</i> $\vec{E}$. With $V(\infty) = 0$, $V(P) = -\int_\infty^P \vec{E}\cdot d\vec{l}$.</div>
+
+<p>This is the integral twin of $\vec{E} = -\nabla V$: one differentiates, the other integrates. For a point charge, $V(r) = -\int_\infty^r (Q/4\pi\varepsilon_0 r'^2)\,dr' = Q/4\pi\varepsilon_0 r$.</p>
+
+<h3>Potential of a uniformly charged spherical shell</h3>
+<p>Shell of radius $R$, total charge $Q$. Outside ($r > R$) the field is the point-charge field, so $V = Q/4\pi\varepsilon_0 r$. Inside ($r < R$) the field is zero, so moving a test charge inside costs no work — the potential is constant, equal to its surface value:</p>
+
+<div class="formula"><b>Formula 1c.</b> Spherical shell: $\boxed{V = \dfrac{Q}{4\pi\varepsilon_0 r}\ (r \geq R)}$; $\boxed{V = \dfrac{Q}{4\pi\varepsilon_0 R}\ \text{(constant, } r \leq R\text{)}}$.</div>
+
+<h3>Potential of a uniformly charged solid sphere</h3>
+<p>Solid sphere of radius $R$, total charge $Q$. Outside it is again $V = Q/4\pi\varepsilon_0 r$. Inside, integrate the linear field $E = Qr/4\pi\varepsilon_0 R^3$ inward from the surface:</p>
+
+<div class="formula"><b>Formula 1d.</b> Solid sphere: $\boxed{V = \dfrac{Q}{4\pi\varepsilon_0 r}\ (r \geq R)}$; $\boxed{V = \dfrac{Q}{8\pi\varepsilon_0 R}\left(3 - \dfrac{r^2}{R^2}\right)\ (r \leq R)}$. At the centre $V(0) = 3Q/8\pi\varepsilon_0 R = 1.5\times$ the surface value.</div>
+
+<p>Derivation sketch: $V(r) - V(R) = -\int_R^r E\,dr' = -\int_R^r (Qr'/4\pi\varepsilon_0 R^3)\,dr' = (Q/8\pi\varepsilon_0 R^3)(R^2 - r^2)$; add $V(R) = Q/4\pi\varepsilon_0 R$ and simplify.</p>
+
 <p>Electric potential is work per unit positive test charge to bring it from infinity to the point. For a point charge, $V = q/4\pi\varepsilon_0 r$. For a dipole at field point $(r,\theta)$ with $r \gg l$:</p>
 
 <div class="formula"><b>Formula 2.</b> Dipole potential and field · $V(r,\theta) = \dfrac{p\cos\theta}{4\pi\varepsilon_0 r^2}$ · $E_r = \dfrac{2p\cos\theta}{4\pi\varepsilon_0 r^3}$ · $E_\theta = \dfrac{p\sin\theta}{4\pi\varepsilon_0 r^3}$.</div>
@@ -88,75 +108,6 @@ description: Dipole moment, potential derivation, E = −grad V, three 2019 grad
 
 <div class="pyq">
 <span class="qno">Q3</span>
-<p class="qtext">Potential $V(x,y,z) = -k(x^2+y^2+z^2)$, $k$ a constant. Find $\vec{E}$ at $(1,1,1)$.</p>
-<span class="yr">2019</span>
-
-<span class="lbl">Recall</span>
-<div class="recall">$\vec{E} = -\nabla V = -\left(\dfrac{\partial V}{\partial x}\hat{i} + \dfrac{\partial V}{\partial y}\hat{j} + \dfrac{\partial V}{\partial z}\hat{k}\right)$.</div>
-
-<span class="lbl">Steps</span>
-<ol class="steps">
-<li>Differentiate: $\partial V/\partial x = -2kx$, $\partial V/\partial y = -2ky$, $\partial V/\partial z = -2kz$ (reason: power rule, other variables held constant).</li>
-<li>Apply the minus sign of $-\nabla V$: $\vec{E} = 2k\,(x\hat{i} + y\hat{j} + z\hat{k})$.</li>
-<li>Insert $(x,y,z) = (1,1,1)$: $\vec{E} = 2k\,(\hat{i} + \hat{j} + \hat{k})$, magnitude $|E| = 2k\sqrt{3}$.</li>
-</ol>
-
-<span class="lbl">Answer</span>
-<div class="ans">$\boxed{\vec{E}(1,1,1) = 2k\,(\hat{i} + \hat{j} + \hat{k})}$ · Unit: V/m = N/C (so $[k] = $ V/m²). · Magnitude $2\sqrt{3}\,k$.</div>
-
-<span class="lbl">Exam tip</span>
-<div class="tip">Keep the minus sign of $-\nabla V$ until the last line — sign errors are the most common trap here.</div>
-</div>
-
-<div class="pyq">
-<span class="qno">Q4</span>
-<p class="qtext">Find $\nabla\phi$ where $\phi = 1/r$.</p>
-<span class="yr">2019</span>
-
-<span class="lbl">Recall</span>
-<div class="recall">$r = \sqrt{x^2+y^2+z^2}$, so $\partial r/\partial x = x/r$ (chain rule on the square root).</div>
-
-<span class="lbl">Steps</span>
-<ol class="steps">
-<li>Differentiate the $x$-component: $\dfrac{\partial}{\partial x}\!\left(\dfrac{1}{r}\right) = -\dfrac{1}{r^2}\dfrac{\partial r}{\partial x} = -\dfrac{x}{r^3}$ (reason: chain rule).</li>
-<li>By symmetry, the $y$- and $z$-components are $-y/r^3$ and $-z/r^3$.</li>
-<li>Combine: $\nabla(1/r) = -\dfrac{x\hat{i}+y\hat{j}+z\hat{k}}{r^3} = -\dfrac{\vec{r}}{r^3} = -\dfrac{\hat{r}}{r^2}$.</li>
-<li>Therefore the field of a point charge $Q$ is $\vec{E} = -\dfrac{Q}{4\pi\varepsilon_0}\nabla(1/r) = \dfrac{Q}{4\pi\varepsilon_0 r^2}\hat{r}$.</li>
-</ol>
-
-<span class="lbl">Answer</span>
-<div class="ans">$\boxed{\nabla(1/r) = -\dfrac{\hat{r}}{r^2}}$ · Used to convert any $1/r$ potential into a $1/r^2$ field.</div>
-
-<span class="lbl">Exam tip</span>
-<div class="tip">Memorise this identity — every $1/r$ Coulomb potential becomes a $1/r^2$ field in one line.</div>
-</div>
-
-<div class="pyq">
-<span class="qno">Q5</span>
-<p class="qtext">Find the potential at $(x,y,z)$ for the conservative field $\vec{F} = (2xy+z^2)\hat{i} + x^2\hat{j} + 2xz\hat{k}$.</p>
-<span class="yr">2019</span>
-
-<span class="lbl">Recall</span>
-<div class="recall">For a conservative field, $V$ satisfies $F_x = -\partial V/\partial x$, $F_y = -\partial V/\partial y$, $F_z = -\partial V/\partial z$. A conservative field has $\nabla\times\vec{F} = 0$.</div>
-
-<span class="lbl">Steps</span>
-<ol class="steps">
-<li>Check it is conservative: $\partial_y F_z - \partial_z F_y = 0 - 0 = 0$, $\partial_z F_x - \partial_x F_z = 2z - 2z = 0$, $\partial_x F_y - \partial_y F_x = 2x - 2x = 0$. So $\nabla\times\vec{F} = 0$ — a potential $V$ exists.</li>
-<li>Integrate $F_x$: $V = -\int (2xy+z^2)\,dx = -(x^2 y + x z^2) + f(y,z)$ (reason: integral of $2xy$ is $x^2 y$, of $z^2$ is $xz^2$; $y$ and $z$ are constants under $x$-integration).</li>
-<li>Match $F_y$: $-\partial V/\partial y = x^2 - \partial_y f$ must equal $F_y = x^2$, so $\partial_y f = 0$.</li>
-<li>Match $F_z$: $-\partial V/\partial z = 2xz - \partial_z f$ must equal $F_z = 2xz$, so $\partial_z f = 0$.</li>
-<li>Hence $f = $ constant $C$. Final: $V(x,y,z) = -(x^2 y + x z^2) + C$.</li>
-</ol>
-
-<span class="lbl">Answer</span>
-<div class="ans">$\boxed{V(x,y,z) = -(x^2 y + x z^2) + C}$ · Verified by differentiating back: all three components match $\vec{F}$.</div>
-
-<span class="lbl">Exam tip</span>
-<div class="tip">Always verify by computing $-\nabla V$ at the end — it catches integration-constant slips.</div>
-</div>
-
-<div class="pyq">
-<span class="qno">Q6</span>
 <p class="qtext">Prove that the electrostatic field is conservative.</p>
 <span class="yr">2019</span>
 

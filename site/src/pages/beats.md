@@ -1,12 +1,14 @@
 ---
 layout: ../layouts/Docs.astro
-title: 5 · Beats — Theory + 3 Solved PYQs
+title: 5 · Beats — Theory + 6 Solved PYQs
 description: Collinear SHM superposition, phasor result, beat derivation, sonometer numeric with full steps. Easy theory then solved questions.
 ---
 
-This page covers superposition of two collinear SHMs. It has three short theory sections, two figures, and three solved PYQs.
+This page covers superposition of two collinear SHMs. It has three short theory sections, two figures, and six solved PYQs.
 
 <h2>1. Same frequency → resultant amplitude and phase</h2>
+
+<p><b>Superposition principle.</b> When two waves overlap, the resultant displacement at any instant is the algebraic sum of the two separate displacements: $y = y_1 + y_2$. This works because each SHM obeys a <i>linear</i> differential equation ($\ddot{y} + \omega^2 y = 0$) — sums of solutions are also solutions. Without linearity there would be no clean "resultant SHM".</p>
 
 Two vibrations along the same line with the same frequency join into one vibration. Like two people pushing a swing together: the pushes add.
 
@@ -111,6 +113,62 @@ Drop constants ($\pi/4$ and $1/2$ cancel in ratios): $n \propto \sqrt{T}/(l\,d\s
 <div class="ans">$\boxed{n_1 = 350\text{ Hz},\ n_2 = 360\text{ Hz},\ \text{beats} = 10/\text{s}}$.</div>
 <span class="lbl">Exam tip</span>
 <div class="tip">Invert the length ratio ($l_2/l_1$) and the diameter ratio ($d_2/d_1$) — that is the classic trap.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">S5-Q4</span><p class="qtext">What are beats? Give the theory of beats.</p>
+<span class="yr">2019</span><span class="yr">2022</span><span class="rep">×2</span>
+<span class="lbl">Recall</span>
+<div class="recall">Beats = periodic loud-soft pattern from two close frequencies. Superposition principle: $y = y_1 + y_2$. Sum-to-product: $\sin C + \sin D = 2\sin\frac{C+D}{2}\cos\frac{C-D}{2}$.</div>
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Define beats: when two sound waves of slightly different frequencies superpose, the intensity waxes and wanes periodically — each wax-wane cycle is one beat (reason: §2 above).</li>
+<li>Write $y_1 = a\sin\omega_1 t$, $y_2 = a\sin\omega_2 t$ and add by the superposition principle (reason: resultant displacement is the algebraic sum).</li>
+<li>Apply sum-to-product: $y = 2a\cos(\Delta\omega t/2)\sin(\bar{\omega}t)$ with $\bar{\omega} = (\omega_1+\omega_2)/2$, $\Delta\omega = \omega_1-\omega_2$ (reason: trig identity).</li>
+<li>Read off: fast carrier $\sin(\bar{\omega}t)$ (the heard pitch) inside a slow envelope $2a\cos(\Delta\omega t/2)$ (reason: $\Delta\omega \ll \bar{\omega}$).</li>
+<li>Intensity $\propto$ (amplitude)$^2$ peaks twice per envelope cycle, so beat rate $f_{\text{beat}} = |f_1 - f_2|$ per second (reason: $\cos^2$ has half the period of $\cos$).</li>
+</ol>
+<span class="lbl">Answer</span>
+<div class="ans">Beats are the periodic swell-and-fade of loudness from two close frequencies. Theory: $y_1+y_2 = 2a\cos(\Delta\omega t/2)\sin(\bar{\omega}t)$. $\boxed{f_{\text{beat}} = |f_1 - f_2|\text{ per second}}$.</div>
+<span class="lbl">Exam tip</span>
+<div class="tip">Asked ×2 (2019 wants the definition, 2022 the full theory). Write the sum-to-product step — it is the "theory" half of the marks.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">S5-Q5</span><p class="qtext">Two waves $y_1 = 3\sin(\omega t)$ and $y_2 = 4\sin(\omega t + \pi/6)$ superpose each other. What will be the amplitude of the resultant wave?</p>
+<span class="yr">2023</span>
+<span class="lbl">Recall</span>
+<div class="recall">Same-frequency collinear SHMs: $A^2 = a_1^2 + a_2^2 + 2a_1a_2\cos\phi$ (Formula 1). Here $a_1 = 3$, $a_2 = 4$, $\phi = \pi/6 = 30°$.</div>
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Identify $a_1 = 3$, $a_2 = 4$, phase gap $\phi = \pi/6$ (reason: both are sine form with the same $\omega t$).</li>
+<li>$A^2 = 3^2 + 4^2 + 2(3)(4)\cos 30° = 9 + 16 + 24\times(\sqrt{3}/2)$ (reason: Formula 1).</li>
+<li>$A^2 = 25 + 12\sqrt{3} \approx 25 + 20.78 = 45.78$ (reason: $\sqrt{3} \approx 1.732$).</li>
+<li>$A = \sqrt{45.78} \approx 6.77$.</li>
+</ol>
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{A = \sqrt{25 + 12\sqrt{3}} \approx 6.77}$ (same units as $y_1, y_2$).</div>
+<span class="lbl">Exam tip</span>
+<div class="tip">2-mark numeric — write Formula 1 first, then substitute. Do not convert to cosine form; both are already sines.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">S5-Q6</span><p class="qtext">Two S.H.Ms of same frequency along the same line have amplitudes in the ratio $3:4$. If the phase difference between them is $45°$, find the ratio of the amplitude of the resultant S.H.M. to that of the smaller of the two.</p>
+<span class="yr">2024</span>
+<span class="lbl">Recall</span>
+<div class="recall">$A^2 = a_1^2 + a_2^2 + 2a_1a_2\cos\phi$. Let the amplitudes be $3k$ and $4k$ (ratio $3:4$); smaller is $3k$. $\phi = 45°$, $\cos 45° = 1/\sqrt{2}$.</div>
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Write $a_1 = 3k$, $a_2 = 4k$ (reason: ratio $3:4$; $k$ cancels in the final ratio).</li>
+<li>$A^2 = (3k)^2 + (4k)^2 + 2(3k)(4k)\cos 45° = 9k^2 + 16k^2 + 24k^2/\sqrt{2}$ (reason: Formula 1).</li>
+<li>$24/\sqrt{2} = 12\sqrt{2}$, so $A^2 = k^2(25 + 12\sqrt{2})$ (reason: rationalize).</li>
+<li>$A = k\sqrt{25 + 12\sqrt{2}} \approx k\sqrt{41.97} \approx 6.48k$ (reason: $12\sqrt{2} \approx 16.97$).</li>
+<li>Required ratio $= A/(3k) = \sqrt{25+12\sqrt{2}}/3 \approx 6.48/3 \approx 2.16$.</li>
+</ol>
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{\dfrac{A}{a_{\text{smaller}}} = \dfrac{\sqrt{25 + 12\sqrt{2}}}{3} \approx 2.16}$.</div>
+<span class="lbl">Exam tip</span>
+<div class="tip">Use $3k$, $4k$ — the unknown $k$ cancels. $\cos 45° = 1/\sqrt{2}$; rationalize to $12\sqrt{2}$ before adding.</div>
 </div>
 
 <p class="ref"><b>Reference.</b> Subrahmanyam & Brij Lal — Waves & Oscillations Ch-4 (superposition, beats, sonometer).</p>

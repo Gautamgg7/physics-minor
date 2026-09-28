@@ -4,7 +4,7 @@ title: 1 · Electrostatics
 description: Gauss law, potential, dipole, capacitors, dielectrics. Easy theory then year-wise solved questions.
 ---
 
-This chapter has **24 PYQs from 2018–2024**, split across five subtopic pages below. Each page gives you the minimum theory, then a step-by-step solution to every question.
+This chapter has **26 PYQs from 2018–2023**, split across five subtopic pages below. Each page gives you the minimum theory, then a step-by-step solution to every question.
 
 ## Subtopic pages
 

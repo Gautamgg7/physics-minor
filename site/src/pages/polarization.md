@@ -1,10 +1,10 @@
 ---
 layout: ../layouts/Docs.astro
-title: 10 · Polarization — Theory + 6 Solved PYQs
-description: Polarized vs unpolarized light, Nicol test, double refraction, Huygens theory, quarter-wave plate numerics, elliptic and circular light. Easy theory then solved questions.
+title: 10 · Polarization — Theory + 7 Solved PYQs
+description: Polarized vs unpolarized light, Nicol test, production methods, double refraction, Huygens theory, quarter-wave plate numerics, elliptic and circular light. Easy theory then solved questions.
 ---
 
-<p>Light is a transverse wave. Its electric field <span class="v">E</span> always vibrates at right angles to the travel direction. If the vibration keeps changing direction, the light is unpolarized. If it vibrates in one fixed pattern, the light is polarized. Ordinary sunlight is unpolarized; the light reflected from a wet road or passed through a Polaroid sunglass is polarized — that is why glare drops. The six solved PYQs below cover the full syllabus (×2 2018,2023 · ×2 2022,2024 · 2023 · ×2 2022,2024 · 2019).</p>
+<p>Light is a transverse wave. Its electric field <span class="v">E</span> always vibrates at right angles to the travel direction. If the vibration keeps changing direction, the light is unpolarized. If it vibrates in one fixed pattern, the light is polarized. Ordinary sunlight is unpolarized; the light reflected from a wet road or passed through a Polaroid sunglass is polarized — that is why glare drops. The seven solved PYQs below cover the full syllabus.</p>
 
 <h2>1. Polarized vs unpolarized light + Nicol prism test</h2>
 
@@ -12,11 +12,11 @@ description: Polarized vs unpolarized light, Nicol test, double refraction, Huyg
 
 <p>A Nicol prism passes only vibrations parallel to its principal section and blocks the rest. So rotate a Nicol around the beam and watch the output: (i) plane-polarized input — intensity falls to zero twice per full rotation (extinction positions); (ii) unpolarized input — intensity stays constant (every direction is equally present); (iii) partially polarized input — intensity varies but never reaches zero.</p>
 
-<div class="formula"><b>Formula 1.</b> <span class="v">E</span> vibration picture: unpolarized → <span class="v">E</span> in all transverse directions; plane-polarized → <span class="v">E</span> in one fixed plane; circular → equal amplitudes with 90° phase gap; elliptic → unequal amplitudes with 90° phase gap.</div>
+<div class="formula"><b>Formula 1.</b> <span class="v">E</span> vibration picture: unpolarized → <span class="v">E</span> in all transverse directions; plane-polarized → <span class="v">E</span> in one fixed plane; circular → equal amplitudes with 90° phase gap; elliptic → unequal amplitudes, or phase not exactly 90° (the general case).</div>
 
 <div class="fig"><img src="/images/polarization.svg" alt="Unpolarized light with vibrations in all directions entering a Nicol prism and leaving as plane polarized light with E in one plane"/><div class="cap">Fig 1. Unpolarized <span class="v">E</span> (many directions, dots = out-of-plane) enters the Nicol; only one direction leaves, so output <span class="v">E</span> lies in one plane.</div></div>
 
-<div class="callout"><b>Note.</b> Polarization proves light is transverse — sound, being longitudinal, cannot be polarized. Also, "zero twice per rotation" is the signature of plane-polarized light. Constant intensity means unpolarized; varying-without-zero means partially polarized or elliptic — not unpolarized.</div>
+<div class="callout"><b>Note.</b> Polarization proves light is transverse — sound, being longitudinal, cannot be polarized. Also, "zero twice per rotation" is the signature of plane-polarized light. Constant intensity on rotating the Nicol means unpolarized <i>or</i> circularly polarized (circular also gives constant intensity) — the QWP test in §5 tells them apart. Varying-without-zero means partially polarized or elliptic.</div>
 
 <div class="pyq">
 <span class="qno">Q1</span><p class="qtext">What is the difference between polarised and unpolarised light? How do you test it? <span class="yr">2018</span> <span class="yr">2023</span> <span class="rep">×2</span></p>
@@ -35,6 +35,29 @@ description: Polarized vs unpolarized light, Nicol test, double refraction, Huyg
 <span class="lbl">Answer</span><div class="ans">Unpolarized light has <span class="v">E</span> in every transverse direction, so the Nicol output stays constant on rotation. Plane-polarized light has <span class="v">E</span> confined to one plane, so the Nicol output falls to zero twice per full rotation.</div>
 
 <span class="lbl">Exam tip</span><div class="tip">Write the vibration definition first (2 marks), then the rotate-the-Nicol test with both readings (2 marks) — that is full marks for this repeat.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">Q1b</span><p class="qtext">Mention the different ways to produce plane-polarized light and to analyse it.</p>
+<span class="yr">2019</span><span class="yr">2022</span><span class="yr">2023</span><span class="rep">×3</span>
+
+<span class="lbl">Recall</span>
+<div class="recall">Produce: reflection (Brewster), double refraction (Nicol/tourmaline), dichroism (Polaroid). Analyse: rotate a second Nicol/polarizer.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Method 1 — reflection: unpolarized light reflecting at Brewster's angle $i_p$ ($\tan i_p = \mu$) gives fully plane-polarized reflected light, vibrations perpendicular to the plane of incidence.</li>
+<li>Method 2 — double refraction: a Nicol prism (or tourmaline tongs) splits the beam and passes only one polarized component — §1–§2 above.</li>
+<li>Method 3 — dichroism/selective absorption: a Polaroid sheet (or tourmaline crystal) absorbs one vibration direction and transmits the perpendicular one.</li>
+<li>Method 4 — scattering: light scattered at 90° is plane polarized (blue sky light is the daily example).</li>
+<li>Analysis: pass the beam through a second Nicol (analyzer) and rotate it — plane-polarized light gives zero intensity twice per rotation (Malus law $I = I_0\cos^2\theta$); unpolarized gives constant intensity.</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{\text{Produce: Brewster reflection, Nicol/double refraction, Polaroid, scattering. Analyse: rotate an analyzer Nicol — zero twice per turn = plane polarized.}}$</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Four production methods as four short lines, then the analyzer test — breadth first, then the one-line test.</div>
 </div>
 
 <h2>2. Double refraction — o-ray, e-ray and the crystals</h2>
@@ -143,7 +166,7 @@ description: Polarized vs unpolarized light, Nicol test, double refraction, Huyg
 <div class="pyq">
 <span class="qno">Q4b</span><p class="qtext">Find the thickness of a quartz quarter-wave plate for λ = 5.9 × 10<sup>−5</sup> cm with μ<sub>o</sub> = 1.544, μ<sub>e</sub> = 1.535. <span class="yr">2022</span></p>
 
-<span class="lbl">Recall</span><div class="recall">Formula 4 with the modulus — here μ<sub>e</sub> &lt; μ<sub>o</sub>, so |Δμ| = μ<sub>o</sub> − μ<sub>e</sub>.</div>
+<span class="lbl">Recall</span><div class="recall">Formula 4 with the modulus — here μ<sub>e</sub> &lt; μ<sub>o</sub>, so |Δμ| = μ<sub>o</sub> − μ<sub>e</sub>. <b>Note:</b> the 2022 paper calls this "quartz" but gives μ<sub>e</sub> = 1.535 &lt; μ<sub>o</sub> — the negative-crystal ordering, contradicting §2 (quartz is positive, μ<sub>e</sub> = 1.553 &gt; μ<sub>o</sub>). Likely a paper typo for 1.553; the modulus leaves the answer unaffected.</div>
 
 <span class="lbl">Steps</span>
 <ol class="steps">
@@ -173,7 +196,7 @@ description: Polarized vs unpolarized light, Nicol test, double refraction, Huyg
 <div class="callout"><b>Note.</b> The 45° setting is the whole difference between circular and elliptic — state it. Testing needs the analyzer rotation readings: constant / varies-no-zero / zero-twice. Constant intensity alone does not prove circular — add the QWP undo-check line.</div>
 
 <div class="pyq">
-<span class="qno">Q5</span><p class="qtext">How will you prepare elliptically and circularly polarized light using a Nicol prism and a quarter-wave plate? How do you test them? <span class="yr">2019</span></p>
+<span class="qno">Q5</span><p class="qtext">How will you prepare elliptically and circularly polarized light using a Nicol prism and a quarter-wave plate? How do you test them? <span class="yr">2019</span> <span class="yr">2022</span> <span class="yr">2023</span> <span class="yr">2024</span> <span class="rep">×4</span></p>
 
 <span class="lbl">Recall</span><div class="recall">Nicol → plane <span class="v">E</span> of size E<sub>0</sub>; QWP at angle θ splits into E<sub>0</sub> cos θ and E<sub>0</sub> sin θ with π/2 shift; θ = 45° gives circular, any other θ gives elliptic.</div>
 

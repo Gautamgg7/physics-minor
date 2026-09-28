@@ -9,7 +9,7 @@ Electromagnetic induction is the link between **electricity and magnetism**: a c
 ## Subpages
 
 - **[Faraday laws and Lenz →](/emi-faraday)** — state both Faraday laws (×2), write integral and differential forms (2018), explain Lenz by energy, non-inductive coil (×2: 2018, 2023), self-induction / electric inertia (2019), $L$ and $M$ definitions (2022).
-- **[Inductance numerics and proofs →](/emi-inductance)** — 800→500-turn coil (2022 → ≈156 mH), 1 m solenoid (2019 → ≈0.247 H, ≈0.49 J), 40 cm solenoid (2023 → ≈0.63 mH), parallel-coils proof (2022), 50+100→75 mH numeric (2023 → $M = 37.5$ mH), $U = \tfrac{1}{2}LI^2$ proof (×2).
+- **[Inductance numerics and proofs →](/emi-inductance)** — 800→500-turn coil (2022 → ≈156 mH), 1 m solenoid (2019 → ≈0.247 H, ≈0.49 J), 40 cm solenoid (2023 → ≈0.63 mH), parallel-coils proof (2022), 50+100→75 mH numeric (2023 → $M = 37.5$ mH), $U = \tfrac{1}{2}LI^2$ proof (×2), mutual inductance of two coils on a cylinder (2018).
 
 ## Most-repeated questions
 

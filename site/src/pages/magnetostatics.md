@@ -8,8 +8,8 @@ Magnetostatics is the study of **steady currents** and the steady magnetic field
 
 ## Subpages
 
-- **[Biot–Savart: wire and loop →](/magnetostatics-biot-savart)** — state the law (×3), straight-wire derivation with the 2023 numeric ($I=1.5$ A, $r=3$ cm → $B=10\,\mu$T), loop-axis derivation (×2).
-- **[Ampère law and vector potential →](/magnetostatics-ampere)** — vector potential with the 2018 casework, Ampère law and $\nabla\times\vec{B}=\mu_0\vec{J}$ (×3), meaning and proof of $\nabla\cdot\vec{B}=0$ (2022).
+- **[Biot–Savart: wire and loop →](/magnetostatics-biot-savart)** — state the law (×3), straight-wire derivation with the 2023 numeric ($I=1.5$ A, $r=3$ cm → $B=10\,\mu$T), loop-axis derivation (×2), parallel-wires zero-field point (2018).
+- **[Ampère law and vector potential →](/magnetostatics-ampere)** — vector potential with the 2018 casework (three numerics), solenoid field $B = \mu_0 nI$ via Ampère's law, Ampère law and $\nabla\times\vec{B}=\mu_0\vec{J}$ (×3), meaning and proof of $\nabla\cdot\vec{B}=0$ (2022).
 
 ## Most-repeated questions
 
@@ -21,6 +21,6 @@ Magnetostatics is the study of **steady currents** and the steady magnetic field
 
 ## How to use
 
-Read the Biot–Savart page first. It gives you the wire and loop results by direct integration. Then read the Ampère page. It re-derives the same wire field in two lines using the symmetry of an infinite wire. Same answer, easier algebra — examiners love seeing both methods.
+Read the Biot–Savart page first. It gives you the wire and loop results by direct integration. Then read the Ampère page. It takes the wire field as input and proves Ampère's circuital law from it — same physics, seen from the symmetry side. Examiners love seeing both methods.
 
 <p class="ref"><b>Reference.</b> Brij Lal &amp; Subrahmanyam Ch-7, 8; H.C. Verma Vol-1 Ch-35; S.L. Arora Vol-1 Ch-4.</p>

@@ -4,7 +4,7 @@ const fm = (Astro.props as any).frontmatter ?? {};
 const title = (Astro.props as any).title ?? fm.title ?? 'PHYS7021';
 const description = (Astro.props as any).description ?? fm.description ?? 'PHYS7021 Electricity, Magnetism and Wave Optics — syllabus + PYQ notes';
 const sections: Array<{label: string; pages: Array<[string, string]>; q: string}> = [
-  { label: '1 · Electrostatics', q: '24Q', pages: [
+  { label: '1 · Electrostatics', q: '23Q', pages: [
     ['/electrostatics', 'Overview'],
     ['/electrostatics-gauss', 'Gauss law'],
     ['/electrostatics-fields', 'Fields by Gauss'],
@@ -12,12 +12,12 @@ const sections: Array<{label: string; pages: Array<[string, string]>; q: string}
     ['/electrostatics-capacitors', 'Capacitors'],
     ['/electrostatics-dielectrics', 'Dielectrics'],
   ]},
-  { label: '2 · Magnetostatics', q: '6Q', pages: [
+  { label: '2 · Magnetostatics', q: '7Q', pages: [
     ['/magnetostatics', 'Overview'],
     ['/magnetostatics-biot-savart', 'Biot–Savart'],
     ['/magnetostatics-ampere', 'Ampere & ∇·B'],
   ]},
-  { label: '3 · EMI', q: '11Q', pages: [
+  { label: '3 · EMI', q: '12Q', pages: [
     ['/emi', 'Overview'],
     ['/emi-faraday', 'Faraday & Lenz'],
     ['/emi-inductance', 'L, M, energy'],
@@ -27,16 +27,18 @@ const sections: Array<{label: string; pages: Array<[string, string]>; q: string}
     ['/maxwell-equations', 'Equations & wave eqn'],
     ['/maxwell-waves', 'Poynting & numerics'],
   ]},
-  { label: '5–7 · Waves & Huygens', q: '6Q', pages: [
+  { label: '5–7 · Waves & Huygens', q: '12Q', pages: [
     ['/beats', 'Beats (3Q)'],
     ['/lissajous', 'Lissajous (2Q)'],
     ['/huygens', 'Huygens (1Q)'],
   ]},
-  { label: '8 · Interference', q: '12Q', pages: [
+  { label: '8 · Interference', q: '31Q', pages: [
     ['/interference', 'Overview'],
     ['/interference-ydse', 'YDSE & energy'],
     ['/interference-newton', 'Newton rings'],
     ['/interference-biprism', 'Biprism'],
+    ['/interference-lloyd', "Lloyd's mirror"],
+    ['/interference-thinfilm', 'Thin films'],
   ]},
   { label: '9 · Diffraction', q: '4Q', pages: [
     ['/diffraction', 'Zone plate & grating'],
@@ -44,16 +46,13 @@ const sections: Array<{label: string; pages: Array<[string, string]>; q: string}
   { label: '10 · Polarization', q: '6Q', pages: [
     ['/polarization', 'Full chapter'],
   ]},
-  { label: 'Borderline', q: '11Q', pages: [
-    ['/borderline-ge2', 'GE-2 extras'],
-    ['/borderline-ge4', 'GE-4 extras'],
-  ]},
   { label: 'Revision', q: '★', pages: [
+    ['/syllabus', 'Syllabus & weightage'],
     ['/formulas', 'Formula sheet'],
     ['/questions', 'All questions'],
   ]},
 ];
-const flatNav: Array<[string, string]> = [['/', 'Syllabus'], ...sections.flatMap(s => s.pages)];
+const flatNav: Array<[string, string]> = [['/', 'Home'], ...sections.flatMap(s => s.pages)];
 const path = Astro.url.pathname;
 const cur = path.replace(/\/+$/, '') || '/';
 const isHome = cur === '/';
@@ -86,8 +85,6 @@ const ytTopics: Record<string, string[]> = {
   '/interference-biprism': ['Fresnel biprism experiment BSc'],
   '/diffraction': ['Diffraction grating BSc physics', 'Zone plate BSc'],
   '/polarization': ['Polarization light Brewster Malus law BSc', 'Nicol prism quarter wave plate BSc'],
-  '/borderline-ge2': ['Lorentz force BSc physics', 'Cyclotron charged particle BSc'],
-  '/borderline-ge4': ['Fringe visibility BSc', 'Resolving power telescope microscope BSc'],
   '/formulas': ['BSc physics formula sheet', 'Electricity magnetism all formulas BSc'],
 };
 const yt = ytTopics[cur] ?? [];
@@ -116,6 +113,7 @@ const yt = ytTopics[cur] ?? [];
 <a class="brand" href="/"><span class="pin" aria-hidden="true"></span>PHYS7021</a>
 <div class="crumb">Burdwan · Electricity, Magnetism &amp; Wave Optics · 2018–2024</div>
 <button class="searchbtn" id="searchbtn" type="button" aria-label="Search" aria-expanded="false" aria-controls="pfbox">Search ⌕</button>
+<button class="themebtn" id="themebtn" type="button" aria-label="Toggle dark mode">◐</button>
 <button class="menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="topnav"><span></span><span></span><span></span></button>
 <nav id="topnav">{flatNav.slice(0, 11).map(([h,l]) => <a href={h} class={cur === h ? 'cur' : ''}>{l}</a>)}</nav>
   </div>
@@ -186,6 +184,23 @@ const yt = ytTopics[cur] ?? [];
 <button class="backtop" id="backtop" type="button" aria-label="Back to top">↑</button>
 <script is:inline>
 (function(){
+// Theme: light default, dark toggle, persisted
+var root=document.documentElement;
+try{
+  var saved=localStorage.getItem('phys7021-theme');
+  if(saved==='dark'){root.setAttribute('data-theme','dark');}
+}catch(e){}
+var tb=document.getElementById('themebtn');
+if(tb){
+  function sync(){tb.textContent=root.getAttribute('data-theme')==='dark'?'◑':'◐';tb.setAttribute('aria-label',root.getAttribute('data-theme')==='dark'?'Switch to light mode':'Switch to dark mode');}
+  sync();
+  tb.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')!=='dark';
+    if(dark){root.setAttribute('data-theme','dark');}else{root.removeAttribute('data-theme');}
+    try{localStorage.setItem('phys7021-theme',dark?'dark':'light');}catch(e){}
+    sync();
+  });
+}
 var sb=document.getElementById('searchbtn'),pf=document.getElementById('pfbox');
 if(sb&&pf){
   pf.innerHTML='<input id="pfinput" type="search" placeholder="Search formulas, questions, topics…  (press / anywhere)" autocomplete="off"/><div id="pfresults"></div>';
@@ -211,6 +226,15 @@ var ca=document.getElementById('copyAll');
 if(ca){ca.addEventListener('click',function(){var ps=document.querySelectorAll('.qplain');var all=Array.prototype.map.call(ps,function(s){return s.textContent;}).join('\n\n');var st=document.getElementById('copyStatus');cpDo(all,function(){if(st){st.textContent='Copied '+ps.length+' questions ✓';setTimeout(function(){st.textContent='';},2500);}});});}
 var bt=document.getElementById('backtop');
 if(bt){window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>600);},{passive:true});bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+// Restrained scroll reveal: fade+rise for cards/figures, JS-gated so no-JS never hides content
+try{
+  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var els=document.querySelectorAll('.pyq,.fig,.formula,.callout,.qrow');
+    els.forEach(function(el){el.classList.add('rv');});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rv-in');io.unobserve(e.target);}});},{threshold:0.06,rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }
+}catch(e){}
 })();
 </script>
 <script is:inline defer src="/katex/katex.min.js"></script>

@@ -42,6 +42,26 @@ Glass speed: $1.658\times 1.81 = 3.00098 \approx 3.00$, so $v \approx 1.81\times
 
 <h2>3. Properties of EM waves + how to verify a given field pair</h2>
 
+<h3>Transverse nature from Maxwell's equations</h3>
+
+Take a plane wave $\vec{E} = \vec{E}_0 e^{i(\vec{k}\cdot\vec{r} - \omega t)}$ in free space. Gauss's law $\nabla\cdot\vec{E} = 0$ gives, for this wave, $i\vec{k}\cdot\vec{E}_0 = 0$, so
+
+<div class="formula"><b>Formula 3.</b> Transverse condition $\boxed{\vec{k}\cdot\vec{E}_0 = 0}$ and $\boxed{\vec{k}\cdot\vec{B}_0 = 0}$ — both fields oscillate perpendicular to the propagation direction $\vec{k}$.</div>
+
+The same argument with $\nabla\cdot\vec{B} = 0$ gives $\vec{k}\cdot\vec{B}_0 = 0$. Faraday's law then forces $\vec{E}_0 \perp \vec{B}_0 \perp \vec{k}$ — the three vectors are mutually perpendicular.
+
+<h3>Polarization of EM waves</h3>
+
+Polarization describes the direction in which $\vec{E}$ oscillates. If $\vec{E}_0$ always points along one fixed line (say $\hat{k}$), the wave is <b>plane (linearly) polarized</b>. If the tip of $\vec{E}$ rotates as the wave travels, tracing a circle or ellipse in the plane perpendicular to $\vec{k}$, the wave is <b>circularly or elliptically polarized</b>. Unpolarized light (sunlight) is a rapid random mixture of polarization directions. This is the same polarization studied in Unit 10 — here it appears as a property of the EM wave itself.
+
+<h3>Wave equation in a dielectric</h3>
+
+Inside a linear dielectric ($\varepsilon$, $\mu$, no free charges or currents), Maxwell's equations give the same wave equation with $\varepsilon_0 \to \varepsilon$, $\mu_0 \to \mu$:
+
+<div class="formula"><b>Formula 4.</b> Wave speed in a dielectric $\boxed{v = \dfrac{1}{\sqrt{\mu\varepsilon}}}$, so refractive index $\boxed{n = \dfrac{c}{v} = \sqrt{\mu_r\varepsilon_r}} \approx \sqrt{\varepsilon_r} = \sqrt{K}$ (since $\mu_r \approx 1$ for most dielectrics).</div>
+
+This is why Formula 2 ($v = c/n$) works: the slowing of light in glass is the wave equation with $\varepsilon = K\varepsilon_0$.
+
 Six properties: transverse, speed $c$, ratio $E/B = c$, carries energy and momentum, needs no medium, obeys reflection/refraction/interference/diffraction/polarization.
 
 <h3>4-point verification test</h3>
@@ -78,7 +98,7 @@ For a given $\vec{E}$, $\vec{B}$ pair, check:
 
 <div class="pyq">
 <span class="qno">S4-Q7</span><p class="qtext">Refractive index &amp; velocity of light in a medium: velocity/wavelength in water ($n = 1.33$) and glass ($n = 1.658$) for $\lambda = 5893$ Å.</p>
-<span class="yr">2022</span><span class="yr">2023</span><span class="yr">2024</span><span class="rep">×3</span>
+<span class="yr">2024</span>
 <span class="lbl">Recall</span>
 <div class="recall">$v = c/n$, $\lambda = \lambda_0/n$, $c = 3.00\times 10^8$ m/s, $\lambda_0 = 5893$ Å.</div>
 <span class="lbl">Steps</span>

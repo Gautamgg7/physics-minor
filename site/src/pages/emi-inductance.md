@@ -14,6 +14,8 @@ This page covers every inductance numeric in the GE-2 papers (2022, 2019, 2023) 
 
 <div class="formula"><b>Formula 4.</b> Magnetic energy stored in an inductor: $U = \dfrac{1}{2}LI^2$ (work done against the induced e.m.f. while building the current).</div>
 
+<div class="fig"><img src="/images/mutual-inductance.svg" alt="Two coils with flux linkage from coil 1 to coil 2"/><div class="cap">Fig 2. Mutual inductance: current $I_1$ in coil 1 ($N_1$ turns) sends flux through coil 2 ($N_2$ turns). $M = N_2\Phi_2/I_1$ and $e_2 = -M\,dI_1/dt$.</div></div>
+
 <div class="fig"><img src="/images/solenoid.svg" alt="Solenoid with inside field B, length l, area A, N turns"/><div class="cap">Fig 1. Solenoid: inside field $B = \mu_0 NI/l$, flux linkage $N\Phi = NBA$, hence $L = \mu_0 N^2 A/l$.</div></div>
 
 ---
@@ -111,7 +113,7 @@ This page covers every inductance numeric in the GE-2 papers (2022, 2019, 2023) 
 </ol>
 
 <span class="lbl">Answer</span>
-<div class="ans">$\boxed{\,L_{eq} = \dfrac{L_1 L_2 - M^2}{L_1 + L_2 \mp 2M}\,}$ — upper sign ($-2M$) is the <b>opposing</b> case asked in the question; the lower sign is <b>aiding</b>.</div>
+<div class="ans">$\boxed{\,L_{eq} = \dfrac{L_1 L_2 - M^2}{L_1 + L_2 \mp 2M}\,}$ — upper sign ($-2M$) is the <b>aiding</b> case; the lower sign ($+2M$) is <b>opposing</b>.</div>
 
 <span class="lbl">Exam tip</span>
 <div class="tip">End with the $M = 0$ sanity check — it proves your algebra and earns the last mark.</div>
@@ -163,6 +165,31 @@ This page covers every inductance numeric in the GE-2 papers (2022, 2019, 2023) 
 
 <span class="lbl">Exam tip</span>
 <div class="tip">Mention "no heat loss, ideal coil — energy stored in the field" to nail the energy-conservation line.</div>
+
+</div>
+
+<div class="pyq">
+
+<span class="qno">Q7</span><span class="yr">2018</span>
+<p class="qtext">Define mutual induction. Calculate the mutual inductance of two coils wound on a cylinder of length $l$, cross-section $A$, with $N_1$ and $N_2$ turns respectively.</p>
+
+<span class="lbl">Recall</span>
+<div class="recall">Mutual inductance $M = \Phi_2/I_1$ — flux linked with coil 2 per ampere in coil 1. Field inside a long solenoid $B = \mu_0 N_1 I_1/l$.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Define mutual induction: a changing current $I_1$ in coil 1 induces $e_2 = -M\,dI_1/dt$ in coil 2; $M = N_2\Phi_2/I_1$ where $\Phi_2$ is the flux through one turn of coil 2.</li>
+<li>Field from coil 1: treat it as a solenoid, $B_1 = \mu_0 N_1 I_1/l$, uniform over the cross-section $A$ (reason: long cylinder).</li>
+<li>Flux through one turn of coil 2: $\Phi_2 = B_1 A = \mu_0 N_1 I_1 A/l$ (reason: coil 2 sits in coil 1's field).</li>
+<li>Total linkage with coil 2: $N_2\Phi_2 = \mu_0 N_1 N_2 A I_1/l$.</li>
+<li>Divide by $I_1$: $M = \mu_0 N_1 N_2 A/l$. Unit: henry (H). Symmetry: swapping the coils gives the same $M$.</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{M = \dfrac{\mu_0 N_1 N_2 A}{l}}$ · Unit: H · Symmetric in $1 \leftrightarrow 2$.</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Write "$M = N_2\Phi_2/I_1$" first, then find $\Phi_2$ from coil 1's solenoid field — that order is the mark scheme.</div>
 
 </div>
 

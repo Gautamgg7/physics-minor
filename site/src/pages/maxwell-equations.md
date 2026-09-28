@@ -119,7 +119,6 @@ Compare with $\nabla^2 f = (1/v^2)\partial^2 f/\partial t^2$. So $1/v^2 = \mu_0\
 
 <div class="pyq">
 <span class="qno">S4-Q3</span><p class="qtext">Can we apply Ampere's law for non-steady currents? What is Maxwell's correction in this context?</p>
-<span class="yr">2021</span>
 <span class="lbl">Recall</span>
 <div class="recall">Old Ampere law $\nabla\times\vec{B} = \mu_0\vec{J}$ forces $\nabla\cdot\vec{J} = 0$. Continuity needs $\nabla\cdot\vec{J} + \partial\rho/\partial t = 0$. They clash for non-steady currents. Fix by adding $\mu_0\varepsilon_0\,\partial\vec{E}/\partial t$.</div>
 <span class="lbl">Steps</span>
@@ -136,7 +135,7 @@ Compare with $\nabla^2 f = (1/v^2)\partial^2 f/\partial t^2$. So $1/v^2 = \mu_0\
 
 <div class="pyq">
 <span class="qno">S4-Q4</span><p class="qtext">Write down Maxwell's equations (free space / with symbols / inside material / with Maxwell's modification of Ampère's law).</p>
-<span class="yr">2018</span><span class="yr">2019</span><span class="yr">2020</span><span class="yr">2022</span><span class="yr">2023</span><span class="rep">×5</span>
+<span class="yr">2018</span><span class="yr">2019</span><span class="yr">2022</span><span class="yr">2023</span><span class="rep">×4</span>
 <span class="lbl">Recall</span>
 <div class="recall">Four laws: Gauss-E, Gauss-B, Faraday, Ampere–Maxwell. Names + forms + one-line meaning.</div>
 <span class="lbl">Steps</span>
@@ -150,7 +149,7 @@ Compare with $\nabla^2 f = (1/v^2)\partial^2 f/\partial t^2$. So $1/v^2 = \mu_0\
 <span class="lbl">Answer</span>
 <div class="ans">Free space: $\nabla\cdot\vec{E} = \rho/\varepsilon_0$, $\nabla\cdot\vec{B} = 0$, $\nabla\times\vec{E} = -\partial\vec{B}/\partial t$, $\nabla\times\vec{B} = \mu_0\vec{J} + \mu_0\varepsilon_0\,\partial\vec{E}/\partial t$. Inside material: $\nabla\cdot\vec{D} = \rho_f$, $\nabla\cdot\vec{B} = 0$, $\nabla\times\vec{E} = -\partial\vec{B}/\partial t$, $\nabla\times\vec{H} = \vec{J}_f + \partial\vec{D}/\partial t$.</div>
 <span class="lbl">Exam tip</span>
-<div class="tip">Asked ×5 — memorise names, differential forms, and one-line meanings. Write the material forms only if the question says "inside material".</div>
+<div class="tip">Asked ×4 — memorise names, differential forms, and one-line meanings. Write the material forms only if the question says "inside material".</div>
 </div>
 
 <div class="pyq">

@@ -6,7 +6,7 @@ description: Faraday laws in all forms, Lenz law, non-inductive coil, self-induc
 
 A magnet moved near a coil lights a bulb with no battery attached. The cause is the change of magnetic flux; the effect is the induced e.m.f. Lenz law fixes the direction. This page covers every qualitative PYQ in EMI; the inductance numerics live on the companion page.
 
-<div class="fig"><img src="/images/faraday-coil.svg" alt="Bar magnet approaching a coil; flux N B A changes; e.m.f. e induced in coil"/><div class="cap">Fig 1. Moving magnet changes flux $\Phi = NBA$ through the coil; coil e.m.f. is $e = -N\,d\Phi/dt$. Polarity follows Lenz law.</div></div>
+<div class="fig"><img src="/images/faraday-coil.svg" alt="Bar magnet approaching a coil; flux per turn B A changes; e.m.f. e induced in coil"/><div class="cap">Fig 1. Moving magnet changes flux per turn $\Phi = BA$ through the coil; coil e.m.f. is $e = -N\,d\Phi/dt = -d\lambda/dt$ (flux linkage $\lambda = N\Phi$). Polarity follows Lenz law.</div></div>
 
 ## Laws and definitions
 

@@ -20,6 +20,8 @@ Take an infinite straight wire along the $z$-axis. A point P sits at perpendicul
 
 <div class="formula"><b>Formula 2.</b> $B = \dfrac{\mu_0 I}{2\pi r}$ — tangent to circles around the wire.</div>
 
+<div class="fig"><img src="/images/straight-wire.svg" alt="Straight wire with current upward, B field circles shown as into/out of page symbols"/><div class="cap">Fig 1.2: straight wire carrying current $I$ upward. By the right-hand rule, $\vec{B}$ circles the wire: into the page (⊗) on the right, out of the page (⊙) on the left, with $|B| = \mu_0 I/2\pi r$ (Eq. 2).</div></div>
+
 ## Circular loop — field on the axis
 
 Take a loop of radius $R$ carrying current $I$. Look at a point P on the axis at distance $x$ from the centre. By symmetry the perpendicular components cancel in pairs. Only the axial component survives. Integrating round the loop gives
@@ -104,6 +106,31 @@ At the centre ($x=0$) this reduces to $B = \mu_0 I/2R$. Far away ($x \gg R$) it 
 
 <span class="lbl">Exam tip</span>
 <div class="tip">Draw the loop with $R$, $x$, $I$ labelled as in Fig 1, then write Step 3 before integrating.</div>
+
+</div>
+
+<div class="pyq">
+
+<span class="qno">Q4</span><span class="yr">2018</span>
+<p class="qtext">Two parallel wires P and Q are $2r$ apart, carrying currents $i$ and $3i$ in the same direction. Find the point between the wires where the magnetic field is zero.</p>
+
+<span class="lbl">Recall</span>
+<div class="recall">Field of a long wire $B = \mu_0 I/2\pi d$. Between two same-direction currents the two fields point oppositely, so they can cancel.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Let the zero-field point be at distance $x$ from wire P (current $i$), so it is $(2r - x)$ from wire Q (current $3i$).</li>
+<li>Between the wires the fields oppose (reason: right-hand rule — each wire's field circles it, so on the segment between them the two circulations run opposite).</li>
+<li>Set magnitudes equal: $\dfrac{\mu_0 i}{2\pi x} = \dfrac{\mu_0 (3i)}{2\pi (2r - x)}$. Cancel $\mu_0 i/2\pi$: $\dfrac{1}{x} = \dfrac{3}{2r - x}$.</li>
+<li>Cross-multiply: $2r - x = 3x$, so $4x = 2r$ and $x = r/2$.</li>
+<li>The point is $r/2$ from wire P (the weaker current) and $3r/2$ from wire Q — closer to the smaller current, as expected.</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{\text{At } r/2 \text{ from wire P (current } i\text{), i.e. } 3r/2 \text{ from wire Q, on the line joining them}}$.</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Zero field needs the fields to oppose — between the wires that means same-direction currents. State this before writing equations.</div>
 
 </div>
 

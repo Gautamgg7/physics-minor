@@ -31,7 +31,7 @@ description: Polarization vector, D = epsilon0 E + P full slab derivation, polar
 <li>Gauss's law in a dielectric uses free charge only: $\boxed{\oint \vec{D}\cdot d\vec{S} = Q_{\text{free}}}$.</li>
 </ol>
 
-<div class="callout"><b>Note.</b> All three quantities $\vec{D}$, $\vec{E}$, $\vec{P}$ have the same C/m² unit. The vector form of Eq. (2) is $\vec{D} = \varepsilon_0\vec{E} + \vec{P}$.</div>
+<div class="callout"><b>Note.</b> $\vec{D}$ and $\vec{P}$ have unit C/m², while $\vec{E}$ has unit N/C (= V/m) — $\varepsilon_0\vec{E}$ converts the field to C/m². The vector form of Eq. (2) is $\vec{D} = \varepsilon_0\vec{E} + \vec{P}$.</div>
 
 <h2>Solved PYQs</h2>
 
@@ -52,7 +52,7 @@ description: Polarization vector, D = epsilon0 E + P full slab derivation, polar
 </ol>
 
 <span class="lbl">Answer</span>
-<div class="ans">$\boxed{\vec{D} = \varepsilon_0\vec{E} + \vec{P}}$ and $\boxed{\oint \vec{D}\cdot d\vec{S} = Q_{\text{free}}}$ · All three terms have unit C/m².</div>
+<div class="ans">$\boxed{\vec{D} = \varepsilon_0\vec{E} + \vec{P}}$ and $\boxed{\oint \vec{D}\cdot d\vec{S} = Q_{\text{free}}}$ · $\vec{D}$ and $\vec{P}$ have unit C/m²; $\vec{E}$ has unit N/C (V/m).</div>
 
 <span class="lbl">Exam tip</span>
 <div class="tip">Repeated ×3. Draw the slab diagram plus all four steps — the diagram alone can earn a third of the marks.</div>
@@ -92,7 +92,7 @@ description: Polarization vector, D = epsilon0 E + P full slab derivation, polar
 <ol class="steps">
 <li>Take a slab of area $A$ and thickness $d$, containing $N$ aligned molecular dipoles of charge $q$ and tip-to-tip separation $x$. Total dipole moment of the slab: $N q x$ (reason: moments of identical dipoles add).</li>
 <li>By definition: $P = \dfrac{N q x}{A d}$ (reason: divide the total moment by the volume $A d$).</li>
-<li>Bound charge on one face: each dipole deposits $+q$ on one face and $-q$ on the other. Total $N q$ spreads over area $A$, giving $\sigma_p = \dfrac{N q}{A}$ — but to relate it to $P$, note that shifting $N q$ across the slab thickness $d$ deposits charge $N q$ on the face of area $A$: $\sigma_p = \dfrac{N q x}{A d}$ (reason: charge × shift per volume = charge per area).</li>
+<li>Bound charge on one face: only dipoles within a tip-to-tip distance $x$ of the face can deposit their $+q$ on it. Number in this surface layer: $\dfrac{N}{Ad}\times Ax = \dfrac{Nx}{d}$ (reason: number density × layer volume). Charge on face: $\dfrac{Nx}{d}\cdot q$ over area $A$, so $\sigma_p = \dfrac{Nqx}{Ad}$.</li>
 <li>Compare with step 2: $\sigma_p = P$. ✓</li>
 </ol>
 
@@ -135,7 +135,7 @@ description: Polarization vector, D = epsilon0 E + P full slab derivation, polar
 
 <span class="lbl">Steps</span>
 <ol class="steps">
-<li>Before the slab: air-filled, $E_0 = \sigma/\varepsilon_0$ (reason: field of a single charged sheet, by Gauss's law on a pillbox).</li>
+<li>Before the slab: air-filled, $E_0 = \sigma/\varepsilon_0$ (reason: two oppositely charged sheets, each contributing $\sigma/2\varepsilon_0$ by Gauss's pillbox, superpose).</li>
 <li>After inserting the slab: bound charges $\pm\sigma_p$ appear on the two faces, with $\sigma_p$ opposite in sign to the adjacent free charge $\sigma$ (reason: dipoles align against the field).</li>
 <li>Net field at any point in the gap: $E = (\sigma - \sigma_p)/\varepsilon_0 < E_0$ (reason: $\sigma_p > 0$ subtracts).</li>
 <li>With dielectric constant $K$: $E = E_0/K = \sigma/(K\varepsilon_0)$. Limit: $K = 1$ (air) gives $E = E_0$. ✓</li>

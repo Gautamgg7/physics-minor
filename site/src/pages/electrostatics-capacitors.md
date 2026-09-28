@@ -37,6 +37,26 @@ description: Half-CV-squared proof, parallel-plate plus slab, three numericals, 
 
 <p>Equivalently, picture the charging as filling a $v$–$q$ triangle: stored energy is its area, $\tfrac{1}{2}\cdot Q \cdot V$.</p>
 
+<h3>2.1 Energy density — energy lives in the field</h3>
+<p>The energy $\tfrac{1}{2}CV^2$ can be rewritten as energy per unit volume of the field itself. For a parallel-plate capacitor, $C = \varepsilon_0 A/d$ and $V = Ed$:</p>
+
+<div class="formula"><b>Formula 4b.</b> Energy density $\boxed{u = \dfrac{U}{\text{volume}} = \dfrac{\tfrac{1}{2}CV^2}{Ad} = \dfrac{\tfrac{1}{2}(\varepsilon_0 A/d)(Ed)^2}{Ad} = \tfrac{1}{2}\varepsilon_0 E^2}$.</div>
+
+<ol class="steps">
+<li>Volume between plates: $A\,d$. Energy per unit volume: $u = U/(Ad)$.</li>
+<li>Substitute $U = \tfrac{1}{2}CV^2$, $C = \varepsilon_0 A/d$, $V = Ed$: $u = \tfrac{1}{2}(\varepsilon_0 A/d)(Ed)^2/(Ad)$.</li>
+<li>Cancel $A$ and $d$: $u = \tfrac{1}{2}\varepsilon_0 E^2$ — no trace of the capacitor's shape remains, so this is the energy density of the electric field itself.</li>
+</ol>
+
+<div class="callout"><b>Note.</b> $u = \tfrac{1}{2}\varepsilon_0 E^2$ holds for <i>any</i> electrostatic field, not just inside capacitors. In a dielectric replace $\varepsilon_0 \to \varepsilon$.</div>
+
+<h2>3. Isolated spherical conductor</h2>
+<p>A single metal sphere of radius $a$ carrying charge $Q$, far from everything else. Its surface is an equipotential at $V = Q/4\pi\varepsilon_0 a$ (point-charge form outside). Hence</p>
+
+<div class="formula"><b>Formula 5.</b> Isolated sphere capacitance $\boxed{C = \dfrac{Q}{V} = 4\pi\varepsilon_0 a}$.</div>
+
+<p>This is the $b \to \infty$ limit of the spherical capacitor (Q5): when the outer sphere recedes to infinity, $C = 4\pi\varepsilon_0 ab/(b-a) \to 4\pi\varepsilon_0 a$.</p>
+
 <h2>Solved PYQs</h2>
 
 <div class="pyq">
@@ -159,6 +179,8 @@ description: Half-CV-squared proof, parallel-plate plus slab, three numericals, 
 <span class="qno">Q6</span>
 <p class="qtext">Find the capacitance per unit length of a cylindrical capacitor, the outer cylinder being earthed.</p>
 <span class="yr">2019</span>
+
+<div class="fig"><img src="/images/cylindrical-capacitor.svg" alt="Coaxial cylinders of radii a and b, radial E between them"/><div class="cap">Fig 1.3: cylindrical capacitor — inner cylinder radius $a$ (charge $+\lambda$ per unit length), outer radius $b$ earthed. Between them $E = \lambda/2\pi\varepsilon_0 r$; integrating gives $C/l = 2\pi\varepsilon_0/\ln(b/a)$.</div></div>
 
 <span class="lbl">Recall</span>
 <div class="recall">Field of a long line charge $\lambda$ per unit length is $E = \lambda/2\pi\varepsilon_0 r$. The voltage between two coaxial cylinders is $V = \int_a^b E\,dr$.</div>

@@ -194,4 +194,51 @@ Here $I_1$, $I_2$ = intensities from slit 1 and slit 2. $\delta$ = phase differe
 <div class="tip">"No shift" always means "extra paths equal". Write that line first, then substitute — that ordering is what gets the first mark.</div>
 </div>
 
+<div class="pyq">
+<span class="qno">Q8</span><p class="qtext">What is meant by interference fringes? Give the theory of interference fringes.</p>
+<span class="yr">2019</span><span class="yr">2022</span><span class="yr">2023</span><span class="yr">2024</span><span class="rep">×4</span>
+
+<span class="lbl">Recall</span>
+<div class="recall">Fringes = the alternate bright and dark bands on the screen. Theory: $I = I_1+I_2+2\sqrt{I_1I_2}\cos\delta$ with $\delta = 2\pi\Delta/\lambda$.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Define fringes: when two coherent beams overlap, the screen shows alternate bright and dark stripes — these stripes are the interference fringes [because intensity varies point to point].</li>
+<li>Write the intensity law: $I = I_1+I_2+2\sqrt{I_1I_2}\cos\delta$, where $\delta$ is the phase difference at each screen point [superposition, Eqs. (1)–(2)].</li>
+<li>Connect phase to position: $\delta = (2\pi/\lambda)\Delta$ and $\Delta = dy/D$, so $\delta$ grows linearly with screen position $y$ [small-angle geometry].</li>
+<li>Bright fringes where $\cos\delta = +1$: $\Delta = n\lambda$, positions $y_n = n\lambda D/d$ [constructive].</li>
+<li>Dark fringes where $\cos\delta = -1$: $\Delta = (2n+1)\lambda/2$, positions $y_n' = (2n+1)\lambda D/2d$ [destructive].</li>
+<li>Spacing: $\beta = y_{n+1}-y_n = \lambda D/d$ — equal bright and dark widths, proved in Q4.</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{\text{Fringes = alternate bright/dark bands; } y_n = n\lambda D/d,\ \beta = \lambda D/d.}$</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Asked ×4 — the most repeated 2-marker on this page. Define fringes in one line, then write the $y_n$ and $\beta$ formulas.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">Q9</span><p class="qtext">In Young's double slit experiment, the screen is placed $2$ m from the two sources separated by $1.5$ mm. The interference fringes are obtained with monochromatic source of wavelength $6000$ Å. Find the fringe width.</p>
+<span class="yr">2019</span>
+
+<span class="lbl">Recall</span>
+<div class="recall">$\beta = \lambda D/d$ — convert everything to metres first.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Given: $D = 2$ m; $d = 1.5$ mm $= 1.5\times 10^{-3}$ m; $\lambda = 6000$ Å $= 6000\times 10^{-10}$ m $= 6.0\times 10^{-7}$ m.</li>
+<li>Formula: $\beta = \lambda D/d$ [Eq. (2)].</li>
+<li>Substitute: $\beta = (6.0\times 10^{-7}\times 2)/(1.5\times 10^{-3}) = 12.0\times 10^{-7}/1.5\times 10^{-3}$.</li>
+<li>Arithmetic: $12.0/1.5 = 8.0$; $10^{-7}/10^{-3} = 10^{-4}$; so $\beta = 8.0\times 10^{-4}$ m $= 0.8$ mm.</li>
+<li>Sense: $0.8$ mm spacing is easily visible — about 12 fringes per cm.</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{\beta = 8.0\times 10^{-4}\ \text{m} = 0.8\ \text{mm}}$</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Convert Å to m ($1$ Å $= 10^{-10}$ m) and mm to m before dividing — the paper mixes all three units deliberately.</div>
+</div>
+
 <p class="ref"><b>Reference.</b> Brij Lal, Subrahmanyam &amp; Avadhanulu — Optics Ch-13 (coherence), Ch-14 (YDSE, fringe shift, energy); Ajoy Ghatak — Optics Ch-13.</p>

@@ -30,7 +30,7 @@ The three rules:
 2. The forward tangent surface (envelope) of these wavelets after time $t$ is the new wavefront.
 3. Wavelet amplitude is maximum forward and falls to zero backward (added by Stokes; explains why light goes forward only).
 
-What it explains: reflection, refraction (Snell law, Section 3), interference, diffraction, polarization direction — qualitatively.
+What it explains: reflection, refraction (Snell law, Section 3), interference, diffraction — qualitatively. (Polarization needed Fresnel's transverse-wave theory; Huygens' original longitudinal picture could not explain it.)
 
 <div class="callout"><b>Note.</b> Rule (3) is what kills the backward wave. Always mention it.</div>
 

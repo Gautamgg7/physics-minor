@@ -26,7 +26,11 @@ description: Solid sphere outside/inside with graph, U-nucleus number, charged c
 <h2>2. Other Gauss-law results</h2>
 <p>Each result comes from choosing the Gaussian surface that matches the symmetry of the charge distribution.</p>
 
+<div class="fig"><img src="/images/line-charge.svg" alt="Infinite line charge with coaxial Gaussian cylinder, radial E arrows"/><div class="cap">Fig 1.2: infinite line charge $\lambda$. The coaxial Gaussian cylinder of radius $r$ and length $l$ catches flux only through its curved face, giving $E = \lambda/2\pi\varepsilon_0 r$ (Eq. 3a).</div></div>
+
 <div class="formula"><b>Formula 3.</b> Useful Gauss-law fields · (a) Infinite line charge, linear density $\lambda$: $\boxed{E = \lambda/2\pi\varepsilon_0 r}$ (radially out; coaxial Gaussian cylinder). · (b) Thin spherical shell of charge $Q$: outside $E = Q/4\pi\varepsilon_0 r^2$; inside $\boxed{E = 0}$. · (c) Infinite plane sheet, surface density $\sigma$: $\boxed{E = \sigma/2\varepsilon_0}$ on each side (flat Gaussian pillbox). · (d) Charged conductor: all charge on outer surface; field just outside $\boxed{E = \sigma/\varepsilon_0}$ (normal to surface); $E = 0$ inside the metal.</div>
+
+<div class="fig"><img src="/images/sheet-charge.svg" alt="Charged sheet with Gaussian pillbox, E arrows on both sides"/><div class="cap">Fig 1.3: infinite plane sheet with surface density $\sigma$. The Gaussian pillbox straddles the sheet; flux leaves through both flat faces, giving $E = \sigma/2\varepsilon_0$ on each side (Eq. 3c).</div></div>
 
 <h2>Solved PYQs</h2>
 
@@ -123,6 +127,52 @@ description: Solid sphere outside/inside with graph, U-nucleus number, charged c
 
 <span class="lbl">Exam tip</span>
 <div class="tip">Always take the square root before expanding. Expanding the squares wastes time and invites algebra slips.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">Q5</span>
+<p class="qtext">State Coulomb's theorem (Coulomb's law) in electrostatics.</p>
+<span class="yr">2022</span>
+
+<span class="lbl">Recall</span>
+<div class="recall">Force between two point charges $q_1$, $q_2$ distance $r$ apart: $F = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}$, directed along the line joining them.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>State the law: the force is proportional to the product of the charges and inversely proportional to the square of the distance between them.</li>
+<li>Write the vector form: $\vec{F}_{12} = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}\,\hat{r}_{12}$, where $\hat{r}_{12}$ points from $q_1$ to $q_2$.</li>
+<li>Give the constant: $1/4\pi\varepsilon_0 = 9\times 10^9$ N·m²/C². Like charges repel, unlike charges attract.</li>
+<li>Note the conditions: point charges (or spherically symmetric), at rest, in vacuum (in a medium replace $\varepsilon_0 \to \varepsilon$).</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{F = \dfrac{1}{4\pi\varepsilon_0}\dfrac{q_1 q_2}{r^2}}$ along the line joining the charges · $1/4\pi\varepsilon_0 = 9\times 10^9$ N·m²/C².</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Write the vector form with $\hat{r}_{12}$ — the direction line is a separate mark from the magnitude.</div>
+</div>
+
+<div class="pyq">
+<span class="qno">Q6</span>
+<p class="qtext">Calculate the force with which two electrons at a distance of $1.1$ Å in the hydrogen atom repel each other. What is the nature of the electrostatic field energy?</p>
+<span class="yr">2018</span>
+
+<span class="lbl">Recall</span>
+<div class="recall">Coulomb's law $F = k e^2/r^2$ with $k = 9\times 10^9$ N·m²/C², $e = 1.6\times 10^{-19}$ C. Potential energy $U = k e^2/r$.</div>
+
+<span class="lbl">Steps</span>
+<ol class="steps">
+<li>Convert: $r = 1.1$ Å $= 1.1\times 10^{-10}$ m, so $r^2 = 1.21\times 10^{-20}$ m².</li>
+<li>Numerator: $k e^2 = 9\times 10^9 \times (1.6\times 10^{-19})^2 = 9\times 10^9 \times 2.56\times 10^{-38} = 2.304\times 10^{-28}$ N·m².</li>
+<li>Divide: $F = 2.304\times 10^{-28} / 1.21\times 10^{-20} = 1.90\times 10^{-8}$ N, repulsive (reason: like charges repel).</li>
+<li>Field energy: the electrostatic potential energy $U = +k e^2/r > 0$ — positive because work must be done against repulsion to bring the electrons together. The energy is stored in the field.</li>
+</ol>
+
+<span class="lbl">Answer</span>
+<div class="ans">$\boxed{F \approx 1.9\times 10^{-8}\ \text{N (repulsive)}}$ · Field energy $\boxed{U = +ke^2/r > 0}$ — positive, stored in the field.</div>
+
+<span class="lbl">Exam tip</span>
+<div class="tip">Convert Å → m first ($1$ Å $= 10^{-10}$ m). The sign of $U$ is the second mark — repulsive means positive energy.</div>
 </div>
 
 <p class="ref"><b>Reference.</b> Brij Lal &amp; Subrahmanyam, Electricity &amp; Magnetism Ch-2 (Gauss applications: sphere, line, shell, sheet, conductor); S.L. Arora Vol-1 Ch-1.</p>
