@@ -1,0 +1,219 @@
+---
+import '../styles/global.css';
+const fm = (Astro.props as any).frontmatter ?? {};
+const title = (Astro.props as any).title ?? fm.title ?? 'PHYS7021';
+const description = (Astro.props as any).description ?? fm.description ?? 'PHYS7021 Electricity, Magnetism and Wave Optics — syllabus + PYQ notes';
+const sections: Array<{label: string; pages: Array<[string, string]>; q: string}> = [
+  { label: '1 · Electrostatics', q: '24Q', pages: [
+    ['/electrostatics', 'Overview'],
+    ['/electrostatics-gauss', 'Gauss law'],
+    ['/electrostatics-fields', 'Fields by Gauss'],
+    ['/electrostatics-potential', 'Potential & dipole'],
+    ['/electrostatics-capacitors', 'Capacitors'],
+    ['/electrostatics-dielectrics', 'Dielectrics'],
+  ]},
+  { label: '2 · Magnetostatics', q: '6Q', pages: [
+    ['/magnetostatics', 'Overview'],
+    ['/magnetostatics-biot-savart', 'Biot–Savart'],
+    ['/magnetostatics-ampere', 'Ampere & ∇·B'],
+  ]},
+  { label: '3 · EMI', q: '11Q', pages: [
+    ['/emi', 'Overview'],
+    ['/emi-faraday', 'Faraday & Lenz'],
+    ['/emi-inductance', 'L, M, energy'],
+  ]},
+  { label: '4 · Maxwell & waves', q: '9Q', pages: [
+    ['/maxwell', 'Overview'],
+    ['/maxwell-equations', 'Equations & wave eqn'],
+    ['/maxwell-waves', 'Poynting & numerics'],
+  ]},
+  { label: '5–7 · Waves & Huygens', q: '6Q', pages: [
+    ['/beats', 'Beats (3Q)'],
+    ['/lissajous', 'Lissajous (2Q)'],
+    ['/huygens', 'Huygens (1Q)'],
+  ]},
+  { label: '8 · Interference', q: '12Q', pages: [
+    ['/interference', 'Overview'],
+    ['/interference-ydse', 'YDSE & energy'],
+    ['/interference-newton', 'Newton rings'],
+    ['/interference-biprism', 'Biprism'],
+  ]},
+  { label: '9 · Diffraction', q: '4Q', pages: [
+    ['/diffraction', 'Zone plate & grating'],
+  ]},
+  { label: '10 · Polarization', q: '6Q', pages: [
+    ['/polarization', 'Full chapter'],
+  ]},
+  { label: 'Borderline', q: '11Q', pages: [
+    ['/borderline-ge2', 'GE-2 extras'],
+    ['/borderline-ge4', 'GE-4 extras'],
+  ]},
+  { label: 'Revision', q: '★', pages: [
+    ['/formulas', 'Formula sheet'],
+    ['/questions', 'All questions'],
+  ]},
+];
+const flatNav: Array<[string, string]> = [['/', 'Syllabus'], ...sections.flatMap(s => s.pages)];
+const path = Astro.url.pathname;
+const cur = path.replace(/\/+$/, '') || '/';
+const isHome = cur === '/';
+const navIdx = flatNav.findIndex(([h]) => h === cur);
+const prevPage = navIdx > 0 ? flatNav[navIdx - 1] : null;
+const nextPage = navIdx >= 0 && navIdx < flatNav.length - 1 ? flatNav[navIdx + 1] : null;
+const ytTopics: Record<string, string[]> = {
+  '/': ['BSc physics electricity magnetism one shot', 'BSc minor physics wave optics revision'],
+  '/electrostatics': ['Electrostatics BSc physics one shot', 'Electric charges and fields BSc'],
+  '/electrostatics-gauss': ['Gauss theorem BSc physics', 'Electric flux BSc'],
+  '/electrostatics-fields': ['Electric field charged sphere shell cylinder BSc', 'Gauss law applications BSc physics'],
+  '/electrostatics-potential': ['Electric potential dipole BSc physics', 'Electrostatic potential energy BSc'],
+  '/electrostatics-capacitors': ['Capacitors BSc physics one shot', 'Spherical cylindrical capacitor derivation'],
+  '/electrostatics-dielectrics': ['Dielectrics polarization BSc physics', 'D E P relation dielectrics'],
+  '/magnetostatics': ['Magnetostatics BSc physics one shot', 'Magnetic effects of current BSc'],
+  '/magnetostatics-biot-savart': ['Biot Savart law BSc physics', 'Magnetic field circular loop straight wire derivation'],
+  '/magnetostatics-ampere': ['Ampere circuital law BSc physics', 'Solenoid toroid magnetic field derivation'],
+  '/emi': ['Electromagnetic induction BSc physics one shot'],
+  '/emi-faraday': ['Faraday law Lenz law BSc physics', 'Motional emf derivation'],
+  '/emi-inductance': ['Self mutual inductance BSc physics', 'LR circuit growth decay BSc'],
+  '/maxwell': ['Maxwell equations BSc physics', 'Displacement current BSc'],
+  '/maxwell-equations': ['Maxwell equations derivation BSc', 'Ampere Maxwell law BSc'],
+  '/maxwell-waves': ['Poynting vector BSc', 'EM wave energy density momentum BSc'],
+  '/beats': ['Beats waves BSc physics', 'Sonometer experiment frequency'],
+  '/lissajous': ['Lissajous figures CRO BSc'],
+  '/huygens': ['Huygens principle BSc physics', 'Huygens proof reflection refraction'],
+  '/interference': ['Wave optics interference BSc physics one shot'],
+  '/interference-ydse': ['YDSE fringe width BSc physics', 'Young double slit experiment derivation'],
+  '/interference-newton': ['Newton rings experiment BSc'],
+  '/interference-biprism': ['Fresnel biprism experiment BSc'],
+  '/diffraction': ['Diffraction grating BSc physics', 'Zone plate BSc'],
+  '/polarization': ['Polarization light Brewster Malus law BSc', 'Nicol prism quarter wave plate BSc'],
+  '/borderline-ge2': ['Lorentz force BSc physics', 'Cyclotron charged particle BSc'],
+  '/borderline-ge4': ['Fringe visibility BSc', 'Resolving power telescope microscope BSc'],
+  '/formulas': ['BSc physics formula sheet', 'Electricity magnetism all formulas BSc'],
+};
+const yt = ytTopics[cur] ?? [];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="theme-color" content="#0a1530" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.href} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/katex/katex.min.css" />
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-in">
+<a class="brand" href="/"><span class="pin" aria-hidden="true"></span>PHYS7021</a>
+<div class="crumb">Burdwan · Electricity, Magnetism &amp; Wave Optics · 2018–2024</div>
+<button class="searchbtn" id="searchbtn" type="button" aria-label="Search" aria-expanded="false" aria-controls="pfbox">Search ⌕</button>
+<button class="menubtn" id="menubtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="topnav"><span></span><span></span><span></span></button>
+<nav id="topnav">{flatNav.slice(0, 11).map(([h,l]) => <a href={h} class={cur === h ? 'cur' : ''}>{l}</a>)}</nav>
+  </div>
+</div>
+<div class="pfbox" id="pfbox" hidden></div>
+{isHome ? (
+  <div class="hero">
+    <div class="hero-card">
+      <span class="hero-tag">Field Notes · Edition I</span>
+      <div class="kicker">University of Burdwan · Minor Physics · Semester VII</div>
+      <h1>Every <em>question</em> the examiner has asked since 2018, solved one paper at a time.</h1>
+      <p class="lede">PHYS7021 — Electricity, Magnetism and Wave Optics. Theory just enough to write the answer, then 78 past-year questions with full step-by-step working, year pills, repeat counts, boxed answers, and exam tips. Built from Brij Lal, Subrahmanyam and Avadhanulu — the same books your paper-setters read.</p>
+      <div class="hero-dials">
+        <span class="hero-dial"><b>78</b><span>Core questions</span></span>
+        <span class="hero-dial"><b>129</b><span>Appearances</span></span>
+        <span class="hero-dial"><b>45 h</b><span>Syllabus</span></span>
+        <span class="hero-dial"><b>×5</b><span>Top repeat: Maxwell</span></span>
+      </div>
+      <a class="hero-cta" href="#page-map">Start with the page map →</a>
+    </div>
+  </div>
+) : null}
+<div class="page">
+<button class="sidebtn" id="sidebtn" type="button" aria-expanded="false" aria-controls="siderail">Browse topics ▼</button>
+<aside class="side" id="siderail">
+{sections.map(({label, q, pages}) => (
+  <div class="sg">
+    <div class="sg-title"><span>{label}</span><small>{q}</small></div>
+    {pages.map(([h,l]) => <a href={h} class={cur === h ? 'cur' : ''}><span class="lbl">{l}</span></a>)}
+  </div>
+))}
+</aside>
+<main>
+{!isHome && (
+  <>
+    <h1 class="h1">{title}</h1>
+    <p class="lede">{description}</p>
+    <div class="statbar">
+      <span class="chip"><b>78</b> core Q</span>
+      <span class="chip"><b>129</b> appearances</span>
+      <span class="chip"><b>45 h</b> syllabus</span>
+      <span class="chip">SI units · KaTeX</span>
+    </div>
+    <div class="tocrow">{flatNav.map(([h,l]) => <a href={h}>{l}</a>)}</div>
+  </>
+)}
+<article>
+<slot />
+</article>
+{yt.length > 0 && (
+  <div class="ytbox">
+    <b>▶ Watch on YouTube</b>
+    <p>Search these topics to complete this page's syllabus:</p>
+    <ul>
+      {yt.map((t) => <li><a href={`https://www.youtube.com/results?search_query=${encodeURIComponent(t)}`} target="_blank" rel="noopener">{t} ↗</a></li>)}
+    </ul>
+  </div>
+)}
+{!isHome && (prevPage || nextPage) && (
+  <nav class="pager" aria-label="Page navigation">
+    {prevPage ? <a href={prevPage[0]} class="prev"><span>← Previous</span><b>{prevPage[1]}</b></a> : <span aria-hidden="true"></span>}
+    {nextPage ? <a href={nextPage[0]} class="next"><span>Next →</span><b>{nextPage[1]}</b></a> : <span aria-hidden="true"></span>}
+  </nav>
+)}
+<div class="footer">Notes in simple Indian-textbook English · SI units · <a href="/">Syllabus home</a> · <a href="/formulas">Formula sheet</a> · <a href="/questions">All questions</a></div>
+</main>
+</div>
+<button class="backtop" id="backtop" type="button" aria-label="Back to top">↑</button>
+<script is:inline>
+(function(){
+var sb=document.getElementById('searchbtn'),pf=document.getElementById('pfbox');
+if(sb&&pf){
+  pf.innerHTML='<input id="pfinput" type="search" placeholder="Search formulas, questions, topics…  (press / anywhere)" autocomplete="off"/><div id="pfresults"></div>';
+  var ready=null;
+  function load(){if(!ready){ready=import('/pagefind/pagefind.js').then(function(p){p.options({excerptLength:24});return p;});}return ready;}
+  function run(q){if(!q){document.getElementById('pfresults').innerHTML='';return;}load().then(function(p){return p.search(q);}).then(function(r){return r?Promise.all(r.results.slice(0,12).map(function(x){return x.data();})):[];}).then(function(rs){document.getElementById('pfresults').innerHTML=rs.length?rs.map(function(d){return '<a class="pfres" href="'+d.url+'"><b>'+((d.meta&&d.meta.title)||'Page')+'</b><span>'+(d.excerpt||'')+'</span></a>';}).join(''):'<p class="pferr">No results — try a shorter word.</p>';}).catch(function(){document.getElementById('pfresults').innerHTML='<p class="pferr">Search index not built. Run npm run build.</p>';});}
+  var t=null;
+  pf.addEventListener('input',function(e){if(e.target.id!=='pfinput')return;clearTimeout(t);t=setTimeout(function(){run(e.target.value);},150);});
+  function open(){pf.hidden=false;sb.setAttribute('aria-expanded','true');var i=document.getElementById('pfinput');if(i)i.focus();}
+  function close(){pf.hidden=true;sb.setAttribute('aria-expanded','false');}
+  sb.addEventListener('click',function(){pf.hidden?open():close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pf.hidden){close();return;}if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();open();}});
+  document.addEventListener('click',function(e){if(!pf.hidden&&!pf.contains(e.target)&&!sb.contains(e.target))close();});
+}
+var b=document.getElementById('menubtn'),n=document.getElementById('topnav');
+if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});}
+var t2=document.getElementById('sidebtn'),s=document.getElementById('siderail');
+if(t2&&s){t2.addEventListener('click',function(){var o=s.classList.toggle('open');t2.setAttribute('aria-expanded',o?'true':'false');t2.textContent=o?'Hide topics ▲':'Browse topics ▼';});}
+function cpDo(t,ok){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,ok);}else{var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);ok();}}
+var cbs=document.querySelectorAll('.copybtn');
+cbs.forEach(function(b){b.addEventListener('click',function(){var r=b.closest('.qrow');var s=r?r.querySelector('.qplain'):null;cpDo(s?s.textContent:'',function(){var o=b.textContent;b.textContent='Copied ✓';setTimeout(function(){b.textContent=o;},1200);});});});
+var ca=document.getElementById('copyAll');
+if(ca){ca.addEventListener('click',function(){var ps=document.querySelectorAll('.qplain');var all=Array.prototype.map.call(ps,function(s){return s.textContent;}).join('\n\n');var st=document.getElementById('copyStatus');cpDo(all,function(){if(st){st.textContent='Copied '+ps.length+' questions ✓';setTimeout(function(){st.textContent='';},2500);}});});}
+var bt=document.getElementById('backtop');
+if(bt){window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>600);},{passive:true});bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+})();
+</script>
+<script is:inline defer src="/katex/katex.min.js"></script>
+<script is:inline defer src="/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false,trust:true,strict:'ignore'});"></script>
+</body>
+</html>
